@@ -19,6 +19,8 @@ function setVolume( num )
 function stateChanged( state )
 {
 	setVolume( volume )
+	
+	console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel.SongCatch( ' + state.toString() + ' ) end' )
 }
 
 function onYouTubePlayerReady()
