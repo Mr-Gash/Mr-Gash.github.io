@@ -12,15 +12,18 @@ function setVolume( num )
 {
 	volume = num
 
-	if ( player && player.setVolume )
+	if ( player && player.setVolume ) {
 		player.setVolume( volume )
+	}
 }
 
 function stateChanged( state )
 {
 	setVolume( volume )
 	
-	console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel:SongCatch( ' + state.toString() + ' ) end' )
+	if ( state === -1 ) {
+		console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel:SongCatch( true ) end' )
+	}
 }
 
 function onYouTubePlayerReady()
