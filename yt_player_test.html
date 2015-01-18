@@ -26,7 +26,7 @@ function onYouTubePlayerReady()
 	player = document.getElementById( "playerobject" )
 	if ( player )
 		player.addEventListener( "onStateChange", "stateChanged" )
-		console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel.isReady = true end' )
+		console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel:SongCatch() end' )
 
 	setVolume( volume )
 }
