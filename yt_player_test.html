@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html id="id_html">
+
+<!-- I'm terrible at this, forgive me baby -->
+<head>
+<script type="text/javascript">
+
+var player
+var volume = 100
+
+function setVolume( num )
+{
+	volume = num
+
+	if ( player && player.setVolume )
+		player.setVolume( volume )
+}
+
+function stateChanged( state )
+{
+	setVolume( volume )
+}
+
+function onYouTubePlayerReady()
+{
+	player = document.getElementById( "playerobject" )
+	if ( player )
+		player.addEventListener( "onStateChange", "stateChanged" )
+		console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel.isReady = true end' )
+
+	setVolume( volume )
+}
+
+function setContent( content )
+{
+	document.getElementById( "videopanel" ).innerHTML = content
+}
+
+</script>
+</head>
+
+<body scroll="no" id="id_body">
+<div id="videopanel">
+</div>
+</body>
+
+</html>
