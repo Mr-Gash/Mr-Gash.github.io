@@ -20,10 +20,6 @@ function setVolume( num )
 function stateChanged( state )
 {
 	setVolume( volume )
-	
-	if ( state === -1 ) {
-		console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel:SongCatch( true ) end' )
-	}
 }
 
 function onYouTubePlayerReady()
@@ -31,7 +27,7 @@ function onYouTubePlayerReady()
 	player = document.getElementById( "playerobject" )
 	if ( player )
 		player.addEventListener( "onStateChange", "stateChanged" )
-		//console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel:SongCatch() end' )
+		console.log( 'RUNLUA:if IsValid( atmosphere.panel ) then atmosphere.panel:SongCatch() end' )
 
 	setVolume( volume )
 }
