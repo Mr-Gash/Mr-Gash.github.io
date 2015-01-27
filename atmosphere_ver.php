@@ -1,1 +1,10 @@
-100
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+echo "100";
+?>
+
+</body>
+</html> 
